@@ -111,3 +111,19 @@ export const setAbsoluteCenter = () => {
 		transform: translate(-50%, -50%);
 	`;
 };
+
+export const setBoxShadow = (intensity = 'light') => {
+	switch (intensity) {
+		case 'light':
+			return `box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75)`;
+
+		case 'dark':
+			return `box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75)`;
+
+		case 'darker':
+			return `box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)`;
+
+		default:
+			return `box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)`;
+	}
+};

@@ -7,6 +7,11 @@ import styled, { css } from 'styled-components';
 import Button from './Button';
 import CardImg from './card/CardImg';
 
+// -----------------------------------------------------------------------------------------
+// --------------------------------------- Helper ------------------------------------------
+// -----------------------------------------------------------------------------------------
+import * as sh from '../../helpers/styleHelpers';
+
 const marginBottom = { marginBottom: '32px' };
 
 const Card = ({ src, title = 'Default Title', description, price }) => {
@@ -32,8 +37,8 @@ export default Card;
 // ---------------------------------- Styled Components ------------------------------------
 // -----------------------------------------------------------------------------------------
 const CardWrapper = styled.div`
-	border: 1px solid black;
 	margin-bottom: 40px;
+	${sh.setBoxShadow()};
 `;
 
 const Box = styled.div`padding: 12px;`;
