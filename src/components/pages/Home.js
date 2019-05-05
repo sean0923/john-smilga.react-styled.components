@@ -5,6 +5,8 @@ import React from 'react';
 // -----------------------------------------------------------------------------------------
 import ContainerHero from '../common/ContainerHero';
 import Banner from '../common/Banner';
+import About from './home/About';
+import SectionContainer from '../common/SectionContainer';
 
 const Home = ({ className }) => {
 	return (
@@ -16,7 +18,7 @@ const Home = ({ className }) => {
 					description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium doloremque, quis maiores voluptatem, adipisci ipsam possimus sit in rerum aut dolore porro itaque error quo repellendus perspiciatis illum dolorum."
 				/>
 			</ContainerHero>
-			<div className="description">aaa</div>
+			<About />
 		</div>
 	);
 };

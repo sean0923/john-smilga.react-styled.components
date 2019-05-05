@@ -102,3 +102,4 @@ export const setTransition = ({ property = 'all', time = '0.3s', timing = 'ease-
 		transition: ${property} ${time} ${timing};
 	`;
 };
+
