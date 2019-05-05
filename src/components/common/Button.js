@@ -40,7 +40,9 @@ const ButtonWrapper = styled.button`
 	margin-top: ${({ marginTop }) => marginTop};
 	font-size: ${sh.setRem(18)};
 
-	${sh.setTransition()} &:hover {
+	${sh.setTransition()};
+
+	&:hover {
 		background: transparent;
 		color: ${sh.colorOptions.primary};
 	}
