@@ -17,21 +17,11 @@ const CardImg = ({ src, price }) => {
 
 export default CardImg;
 
-const CardImgWrapper = styled.div`
-	position: relative;
-	z-index: 100;
-	${sh.setTransparentBlackBgColor(0)};
-
-	&:hover {
-		${sh.setTransition()};
-		${sh.setTransparentBlackBgColor(0.5)};
-	}
-`;
-
 const Img = styled.img`
 	display: block;
 	width: 100%;
-	z-index: 1;
+
+	${sh.setTransition()};
 `;
 
 const PriceWrapper = styled.div`
@@ -41,7 +31,18 @@ const PriceWrapper = styled.div`
 	border: 1px solid ${sh.colorOptions.white};
 	color: ${sh.colorOptions.white};
 	opacity: 0;
-	${CardImgWrapper}:hover & {
+`;
+
+const CardImgWrapper = styled.div`
+	position: relative;
+	${sh.setTransparentBlackBgColor(0)};
+	background: ${sh.colorOptions.black};
+
+	&:hover ${PriceWrapper} {
 		opacity: 1;
+	}
+
+	&:hover ${Img} {
+		opacity: 0.5;
 	}
 `;
