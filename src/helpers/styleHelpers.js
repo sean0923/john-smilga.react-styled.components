@@ -103,3 +103,11 @@ export const setTransition = ({ property = 'all', time = '0.3s', timing = 'ease-
 	`;
 };
 
+export const setAbsoluteCenter = () => {
+	return css`
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	`;
+};

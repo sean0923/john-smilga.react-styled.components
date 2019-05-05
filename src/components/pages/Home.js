@@ -6,7 +6,7 @@ import React from 'react';
 import ContainerHero from '../common/ContainerHero';
 import Banner from '../common/Banner';
 import About from './home/About';
-import SectionContainer from '../common/SectionContainer';
+import Rooms from './home/Rooms';
 
 const Home = ({ className }) => {
 	return (
@@ -19,6 +19,7 @@ const Home = ({ className }) => {
 				/>
 			</ContainerHero>
 			<About />
+			<Rooms />
 		</div>
 	);
 };
