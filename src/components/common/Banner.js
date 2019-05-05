@@ -1,6 +1,14 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
+// -----------------------------------------------------------------------------------------
+// ----------------------------------- Component Import ------------------------------------
+// -----------------------------------------------------------------------------------------
+import Button from './Button';
+
+// -----------------------------------------------------------------------------------------
+// --------------------------------------- Helper ------------------------------------------
+// -----------------------------------------------------------------------------------------
 import * as sh from '../../helpers/styleHelpers';
 
 const Banner = ({ greeting, title, description }) => {
@@ -11,6 +19,7 @@ const Banner = ({ greeting, title, description }) => {
 			</h1>
 			<div className="info">
 				<p className="description">{description}</p>
+				<Button text="View Details" marginTop="1rem" onClick={() => window.alert('yea')} />
 			</div>
 		</BannerWrapper>
 	);
@@ -19,22 +28,26 @@ const Banner = ({ greeting, title, description }) => {
 // -----------------------------------------------------------------------------------------
 // ---------------------------------- Styled Components ------------------------------------
 // -----------------------------------------------------------------------------------------
-const BannerWrapper = styled.div`
-	${sh.setPadding({ tb: 60, rl: 32 })};
-
-	text-align: center;
-	color: ${sh.colorOptions.white};
-	${sh.setTransparentBlackBgColor(0.7)};
-	${sh.setLetterSpacing(3)};
-
-	${sh.media.tablet`
+const tabletView = () => {
+	return css`
 		width: 70vw;
 		border: 6px solid ${sh.colorOptions.primary};
 		p {
 			width: 75%;
 			margin: 0 auto;
 		}
-	`};
+	`;
+};
+
+const BannerWrapper = styled.div`
+	${sh.setPadding(60, 32)};
+
+	text-align: center;
+	color: ${sh.colorOptions.white};
+	${sh.setTransparentBlackBgColor(0.7)};
+	${sh.setLetterSpacing(3)};
+
+	${sh.media.tablet`${tabletView()}`};
 
 	p {
 		width: 85%;

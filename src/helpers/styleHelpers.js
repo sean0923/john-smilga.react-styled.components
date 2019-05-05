@@ -36,12 +36,16 @@ export const setRem = (num = 16) => {
 	return `${num / 16}rem`;
 };
 
-export const setPadding = ({ t = 0, r = 0, b = 0, l = 0, tb = 0, rl = 0 } = {}) => {
-	if (tb && rl) {
-		return `padding: ${setRem(tb)} ${setRem(rl)};`;
+export const setPadding = (...args) => {
+	if (args.length === 2) {
+		return `padding: ${setRem(args[0])} ${setRem(args[1])};`;
 	}
 
-	return `padding: ${setRem(t)} ${setRem(r)} ${setRem(b)} ${setRem(l)};`;
+	if (args.length === 4) {
+		return `padding: ${args[0]} ${args[1]} ${args[2]} ${args[3]};`;
+	}
+
+	return `padding: 0`;
 };
 
 export const setTransparentBlackBgColor = (num = 0.2) => {
@@ -50,7 +54,7 @@ export const setTransparentBlackBgColor = (num = 0.2) => {
 	`;
 };
 
-export const setLetterSpacing = (num) => {
+export const setLetterSpacing = (num = 3) => {
 	return css`
 		letter-spacing: ${num}px;
 	`;
@@ -65,7 +69,7 @@ const sizes = {
 
 // Iterate through the sizes and create a media template
 export const media = Object.keys(sizes).reduce((acc, label) => {
-	acc[label] = (...args) => css`@media (min-width: ${sizes[label] / 16}em) {${css(...args)};}`;
+	acc[label] = (...args) => css`@media (min-width: ${sizes[label] / 16}em) {${css(...args)}};`;
 
 	return acc;
 }, {});
@@ -90,5 +94,11 @@ export const easeIn = (beg, mid, end) => {
 
 	return css`
 		animation: ${animation} 1s ease-in-out;
+	`;
+};
+
+export const setTransition = ({ property = 'all', time = '0.3s', timing = 'ease-in-out' } = {}) => {
+	return css`
+		transition: ${property} ${time} ${timing};
 	`;
 };
