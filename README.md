@@ -1,4 +1,4 @@
-# React Styled Components tutorial and Project Course
+# React Styled Components Tutorial and Project Course
 
 Taking Udemy Course by John Smilga
 
