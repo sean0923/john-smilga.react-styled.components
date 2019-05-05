@@ -20,22 +20,21 @@ const Banner = ({ greeting, title, description }) => {
 // ---------------------------------- Styled Components ------------------------------------
 // -----------------------------------------------------------------------------------------
 const BannerWrapper = styled.div`
-	/* setRen */
-	padding: 60px 32px;
+	${sh.setPadding({ tb: 60, rl: 32 })};
+
 	text-align: center;
 	color: ${sh.colorOptions.white};
-	background: rgba(0, 0, 0, .7);
-	/* setLetterSpacing */
-	letter-spacing: 3px;
+	${sh.setTransparentBlackBgColor(0.7)};
+	${sh.setLetterSpacing(3)};
 
-	@media (min-width: 768px) {
+	${sh.media.tablet`
 		width: 70vw;
 		border: 6px solid ${sh.colorOptions.primary};
 		p {
 			width: 75%;
 			margin: 0 auto;
 		}
-	}
+	`};
 
 	p {
 		width: 85%;
@@ -46,6 +45,7 @@ const BannerWrapper = styled.div`
 		text-transform: capitalize;
 		color: ${sh.colorOptions.primary};
 		font-size: 48px;
+		${sh.easeIn('50%', '-10%', '0')};
 	}
 
 	.title {
@@ -53,7 +53,10 @@ const BannerWrapper = styled.div`
 	}
 
 	.description {
-		color: red;
+	}
+
+	.info {
+		${sh.easeIn('-50%', '10%', '0')};
 	}
 `;
 
